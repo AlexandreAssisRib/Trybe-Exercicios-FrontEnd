@@ -1,3 +1,7 @@
+// Suponha que você precise simular uma mensagem enviada do robô Curiosity de Marte para a Terra. O Curiosity envia para a Terra a temperatura atual em Marte, gastando um tempo variável de até 5 segundos para que termine o envio. Crie a função sendMarsTemperature, que imprime a temperatura em Marte.
+
+
+
 const messageDelay = () => Math.floor(Math.random() * 5000);
 
 const getMarsTemperature = () => {
@@ -5,16 +9,10 @@ const getMarsTemperature = () => {
   return Math.floor(Math.random() * maxTemperature);
 };
 
-const toFahrenheit = () => ((getMarsTemperature()) * 9/5) + 32;
+// crie a função sendMarsTemperature abaixo
+const sendMarsTemperature = () => {
+    const temperatura = getMarsTemperature();
+    setTimeout(()=> console.log(` Mars temperature is: ${temperatura} degrees Celsius`), messageDelay())
+}
 
-const temperatureInFahrenheit = (temperature) =>
-  console.log(`It is currently ${toFahrenheit(temperature)}ºF at Mars`);
-
-const greet = () =>
-  console.log(`Hi there! Curiosity here. Right now is ${getMarsTemperature()}ºC at Mars`);
-
-// definição da função sendMarsTemperature...
-const sendMarsTemperature = (callback) => setTimeout( () => console.log(callback()),messageDelay());
-  
-sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
-sendMarsTemperature(greet); // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo
+sendMarsTemperature(); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
