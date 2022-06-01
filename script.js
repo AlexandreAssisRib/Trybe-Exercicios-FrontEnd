@@ -5,9 +5,16 @@ const getMarsTemperature = () => {
   return Math.floor(Math.random() * maxTemperature);
 };
 
-// crie a função sendMarsTemperature abaixo
-const sendMarsTemperature = (callback) => {
-    return `Mars temperature is ${callback()} degree`
-}
+const toFahrenheit = () => ((getMarsTemperature()) * 9/5) + 32;
 
-console.log(sendMarsTemperature(getMarsTemperature)); // imprime "Mars temperature is: 20 degree Celsius", por exemplo
+const temperatureInFahrenheit = (temperature) =>
+  console.log(`It is currently ${toFahrenheit(temperature)}ºF at Mars`);
+
+const greet = () =>
+  console.log(`Hi there! Curiosity here. Right now is ${getMarsTemperature()}ºC at Mars`);
+
+// definição da função sendMarsTemperature...
+const sendMarsTemperature = (callback) => console.log(callback());
+  
+sendMarsTemperature(temperatureInFahrenheit); // imprime "It is currently 47ºF at Mars", por exemplo
+sendMarsTemperature(greet); // imprime "Hi there! Curiosity here. Right now is 53ºC at Mars", por exemplo
