@@ -1,0 +1,14 @@
+.card {
+    max-width: 300px;
+    border: 1px solid grey;
+    padding: 10px;
+    min-height: 200px;
+    margin: 20px auto;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-radius: 15px;
+}
