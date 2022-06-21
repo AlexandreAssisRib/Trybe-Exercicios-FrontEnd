@@ -1,6 +1,7 @@
 import './App.css';
 import  pokemons from'./components/data'
 import Card from './components/Card'
+import React from 'react';
 function App() {
   return (
     <>
